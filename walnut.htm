@@ -1,0 +1,51 @@
+# Walnut-Player
+My first project creating a video player with javascript.
+
+<html>
+
+<head>
+<link href='C:Users\Admin\Documents\Code\walnut.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+<h1> Walnut Player | v1.1.0 </h1>
+
+<div class='buttons'>
+<video id='walnut' onclick='toggle()' onmouseover='display()' onmouseleave='vanish()' onended='restart()' src='http://www.w3schools.com/tags/mov_bbb.mp4' type='video/mp3' width='450' height='300'>
+</video>
+<img id='switch' onclick='toggle()' onmouseover='display()' src='C:/Users/Admin/Downloads/play.png' width='40px' height='40px'>
+</div>
+<script>
+var vid = 
+document.getElementById("walnut")
+;
+function toggle() {
+if(vid.currentTime > 0 && vid.paused==false && vid.ended==false) {
+	vid.pause();
+	document.getElementById("switch").src = "C:/Users/Admin/Downloads/play.png";
+	}
+else {
+	vid.play();
+	document.getElementById("switch").src = "C:/Users/Admin/Downloads/pause.png";
+	};
+};
+function restart() {
+document.getElementById("switch").src = "C:/Users/Admin/Downloads/restart.png";
+	document.getElementById('switch').style.opacity = 1;
+}
+function display() {
+	document.getElementById('switch').style.opacity = 1;
+}
+function vanish() {
+	if(vid.ended == false) {
+	document.getElementById('switch').style.opacity = 0;
+	}
+	else {
+		document.getElementById('switch').style.opacity = 1;
+	}
+}
+</script>
+</body>
+
+</html>
